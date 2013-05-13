@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWork-Labyrinth-3", "CourseWork-Labyrinth-3\CourseWork-Labyrinth-3.csproj", "{0097C5CA-AEDF-4538-BFEB-0642BE500C11}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CourseWork-Refactored", "CourseWork-Refactored\CourseWork-Refactored.csproj", "{32FF1643-B4D4-4695-B684-22ED6844F536}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0097C5CA-AEDF-4538-BFEB-0642BE500C11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0097C5CA-AEDF-4538-BFEB-0642BE500C11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0097C5CA-AEDF-4538-BFEB-0642BE500C11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0097C5CA-AEDF-4538-BFEB-0642BE500C11}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32FF1643-B4D4-4695-B684-22ED6844F536}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32FF1643-B4D4-4695-B684-22ED6844F536}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32FF1643-B4D4-4695-B684-22ED6844F536}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32FF1643-B4D4-4695-B684-22ED6844F536}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

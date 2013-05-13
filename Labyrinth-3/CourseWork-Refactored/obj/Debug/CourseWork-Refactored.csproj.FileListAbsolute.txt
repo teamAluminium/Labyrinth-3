@@ -1,0 +1,12 @@
+G:\GitHub\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.exe.config
+G:\GitHub\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.csprojResolveAssemblyReference.cache
+G:\GitHub\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.exe
+G:\GitHub\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.pdb
+G:\GitHub\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.exe
+G:\GitHub\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.pdb
+D:\Telerik\CourseWork\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.exe.config
+D:\Telerik\CourseWork\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.exe
+D:\Telerik\CourseWork\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.pdb
+D:\Telerik\CourseWork\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.csprojResolveAssemblyReference.cache
+D:\Telerik\CourseWork\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.exe
+D:\Telerik\CourseWork\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.pdb
