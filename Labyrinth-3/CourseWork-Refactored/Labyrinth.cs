@@ -1,20 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CourseWork_Refactored
 {
+    /// <summary>
+    /// Class for creating the game field
+    /// </summary>
     public class Labyrinth
     {
         private const int MAX_NUMBER = 2;
-        public int Rows { get; private set; }
-        public int Cols { get; private set; }
-        public string[,] Field { get; set; }
 
         public Labyrinth(int rows, int cols)
         {
-            //Creating Frame
+            ///Creating Frame used to avoid unneded exceptions during checks.
             this.Rows = rows + 2;
             this.Cols = cols + 2;
             this.Field = new string[this.Rows, this.Cols];
@@ -22,10 +19,18 @@ namespace CourseWork_Refactored
             {
                 GenerateRandomLabyrinth();
             }
-            while (HasSolution(Rows / 2, Cols / 2));
+            while (HasSolution(this.Rows / 2, this.Cols / 2));
         }
 
+        public int Rows { get; private set; }
 
+        public int Cols { get; private set; }
+
+        public string[,] Field { get; set; }
+
+        /// <summary>
+        /// Method used for formatted printing the labyrinth on the console. 
+        /// </summary>
         public void DrawLabyrinth()
         {
             Console.WriteLine();
@@ -55,13 +60,18 @@ namespace CourseWork_Refactored
                         Console.Write(this.Field[row, col]);
                     }
                 }
+
                 Console.WriteLine();
             }
+
             Console.ForegroundColor = ConsoleColor.Gray;
             Console.WriteLine();
             Console.WriteLine();
         }
 
+        /// <summary>
+        /// Method used for creation of the labyrinth game field. Uses simple logic for deciding the symbols.
+        /// </summary>
         private void GenerateRandomLabyrinth()
         {
             Random randomInt = new Random();
@@ -87,6 +97,12 @@ namespace CourseWork_Refactored
             }
         }
 
+        /// <summary>
+        /// Method used for checking if the generated labyrinth has a solution
+        /// </summary>
+        /// <param name="positionX">Initial player position on X coordinate</param>
+        /// <param name="positionY">Initial player position on Y coordinate</param>
+        /// <returns></returns>
         private bool HasSolution(int positionX, int positionY)
         {
             if (this.Field[positionX + 1, positionY] == "x" &&
@@ -125,7 +141,6 @@ namespace CourseWork_Refactored
                     {
                         return false;
                     }
-
                 }
                 catch (IndexOutOfRangeException)
                 {
@@ -139,6 +154,7 @@ namespace CourseWork_Refactored
                             }
                         }
                     }
+
                     return true;
                 }
             }

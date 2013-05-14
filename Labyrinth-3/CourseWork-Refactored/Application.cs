@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CourseWork_Refactored
+﻿namespace CourseWork_Refactored
 {
-    class Application
+    public class Application
     {
         static void Main()
         {
