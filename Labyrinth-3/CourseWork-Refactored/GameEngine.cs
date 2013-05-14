@@ -142,136 +142,72 @@ namespace CourseWork_Refactored
 
         private void MovePlayer(string moveDirection, string[,] labyrinth, Player player)
         {
-            switch (moveDirection)
+            if (moveDirection == "d" || moveDirection == "D")
             {
-                case "d":
+                if (labyrinth[player.PossitionX + 1, player.PossitionY] == " - " ||
+                    labyrinth[player.PossitionX + 1, player.PossitionY] == " # ")
+                {
+                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                    labyrinth[player.PossitionX + 1, player.PossitionY] = " * ";
+                    player.PossitionX++;
+                    player.Moves++;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid move! ");
+                }
+            }
 
-                    if (labyrinth[player.PossitionX + 1, player.PossitionY] == " - " ||
-                        labyrinth[player.PossitionX + 1, player.PossitionY] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX + 1, player.PossitionY] = " * ";
-                        player.PossitionX++;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
-                    }
-                    break;
+            else if (moveDirection == "u" || moveDirection == "U")
+            {
+                if (labyrinth[player.PossitionX - 1, player.PossitionY] == " - " ||
+                    labyrinth[player.PossitionX - 1, player.PossitionY] == " # ")
+                {
+                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                    labyrinth[player.PossitionX - 1, player.PossitionY] = " * ";
+                    player.PossitionX--;
+                    player.Moves++;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid move! ");
+                }
+            }
 
-                case "D":
-                    if (labyrinth[player.PossitionX + 1, player.PossitionY] == " - " ||
-                        labyrinth[player.PossitionX + 1, player.PossitionY] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX + 1, player.PossitionY] = " * ";
-                        player.PossitionX++;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
+            else if (moveDirection == "r" || moveDirection == "R")
+            {
+                if (labyrinth[player.PossitionX, player.PossitionY + 1] == " - " ||
+                    labyrinth[player.PossitionX, player.PossitionY + 1] == " # ")
+                {
+                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                    labyrinth[player.PossitionX, player.PossitionY + 1] = " * ";
+                    player.PossitionY++;
+                    player.Moves++;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid move! ");
+                }
+            }
 
-                    }
-                    break;
-
-                case "u":
-                    if (labyrinth[player.PossitionX - 1, player.PossitionY] == " - " ||
-                        labyrinth[player.PossitionX - 1, player.PossitionY] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX - 1, player.PossitionY] = " * ";
-                        player.PossitionX--;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
-                    }
-                    break;
-
-                case "U":
-                    if (labyrinth[player.PossitionX - 1, player.PossitionY] == " - " ||
-                        labyrinth[player.PossitionX - 1, player.PossitionY] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX - 1, player.PossitionY] = " * ";
-                        player.PossitionX--;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
-                    }
-                    break;
-
-                case "r":
-
-                    if (labyrinth[player.PossitionX, player.PossitionY + 1] == " - " ||
-                        labyrinth[player.PossitionX, player.PossitionY + 1] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX, player.PossitionY + 1] = " * ";
-                        player.PossitionY++;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
-                    }
-                    break;
-
-                case "R":
-
-                    if (labyrinth[player.PossitionX, player.PossitionY + 1] == " - " ||
-                      labyrinth[player.PossitionX, player.PossitionY + 1] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX, player.PossitionY + 1] = " * ";
-                        player.PossitionY++;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
-                    }
-                    break;
-
-                case "l":
-
-                    if (labyrinth[player.PossitionX, player.PossitionY - 1] == " - " ||
-                        labyrinth[player.PossitionX, player.PossitionY - 1] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX, player.PossitionY - 1] = " * ";
-                        player.PossitionY--;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
-                    }
-                    break;
-
-                case "L":
-
-                    if (labyrinth[player.PossitionX, player.PossitionY - 1] == " - " ||
-                        labyrinth[player.PossitionX, player.PossitionY - 1] == " # ")
-                    {
-                        labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                        labyrinth[player.PossitionX, player.PossitionY - 1] = " * ";
-                        player.PossitionY--;
-                        player.Moves++;
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid move! ");
-                    }
-                    break;
-                default:
-                    Console.WriteLine("Invalid command!");
-                    break;
+            else if (moveDirection == "l" || moveDirection == "L")
+            {
+                if (labyrinth[player.PossitionX, player.PossitionY - 1] == " - " ||
+                    labyrinth[player.PossitionX, player.PossitionY - 1] == " # ")
+                {
+                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                    labyrinth[player.PossitionX, player.PossitionY - 1] = " * ";
+                    player.PossitionY--;
+                    player.Moves++;
+                }
+                else
+                {
+                    Console.WriteLine("Invalid move! ");
+                }
+            }
+            else
+            {
+                Console.WriteLine("Invalid command!");
             }
         }
     }
