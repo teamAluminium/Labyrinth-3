@@ -25,6 +25,43 @@ namespace CourseWork_Refactored
             while (HasSolution(Rows / 2, Cols / 2));
         }
 
+
+        public void DrawLabyrinth()
+        {
+            Console.WriteLine();
+            Console.WriteLine();
+            for (int row = 0; row < this.Field.GetLength(0); row++)
+            {
+                for (int col = 0; col < this.Field.GetLength(1); col++)
+                {
+                    if (this.Field[row, col] == " # ")
+                    {
+                        Console.ForegroundColor = ConsoleColor.DarkGreen;
+                        Console.Write(this.Field[row, col]);
+                    }
+                    else if (this.Field[row, col] == " x ")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write(this.Field[row, col]);
+                    }
+                    else if (this.Field[row, col] == " - ")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Gray;
+                        Console.Write(this.Field[row, col]);
+                    }
+                    else if (this.Field[row, col] == " * ")
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write(this.Field[row, col]);
+                    }
+                }
+                Console.WriteLine();
+            }
+            Console.ForegroundColor = ConsoleColor.Gray;
+            Console.WriteLine();
+            Console.WriteLine();
+        }
+
         private void GenerateRandomLabyrinth()
         {
             Random randomInt = new Random();
@@ -102,7 +139,6 @@ namespace CourseWork_Refactored
                             }
                         }
                     }
-
                     return true;
                 }
             }

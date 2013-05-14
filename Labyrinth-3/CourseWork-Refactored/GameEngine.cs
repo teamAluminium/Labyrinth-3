@@ -19,13 +19,13 @@ namespace CourseWork_Refactored
             while (gameIsInProgress)
             {
                 DrowInitalState(labyrinth, player);
-                var moveDirection = ReadPlayerCommand();
+                var playerCommand = ReadPlayerCommand();
                 var hasEscaped = CheckIfOut(player, labyrinth.Field);
                 if (hasEscaped)
                 {
                     break;
                 }
-                MovePlayer(moveDirection, labyrinth.Field, player);
+                ReadCommand(playerCommand, labyrinth.Field, player);
                 Thread.Sleep(100);
                 Console.Clear();
             }
@@ -55,45 +55,7 @@ namespace CourseWork_Refactored
             Console.WriteLine("Welcome to \"Labyrinth\" game. Please try to escape. Use 'top' to view the top");
             Console.WriteLine("scoreboard,'restart' to start a new game and 'exit' to quit the game.");
             labyrinth.Field = SetPlayerOnField(labyrinth.Field, player);
-            DrowLabirinthOnConsole(labyrinth);
-
-        }
-
-        private void DrowLabirinthOnConsole(Labyrinth labyrinth)
-        {
-            //I could have done it with overwritting ToString(), but then I could not use colors;
-            Console.WriteLine();
-            Console.WriteLine();
-            for (int row = 0; row < labyrinth.Field.GetLength(0); row++)
-            {
-                for (int col = 0; col < labyrinth.Field.GetLength(1); col++)
-                {
-                    if (labyrinth.Field[row, col] == " # ")
-                    {
-                        Console.ForegroundColor = ConsoleColor.DarkGreen;
-                        Console.Write(labyrinth.Field[row, col]);
-                    }
-                    else if (labyrinth.Field[row, col] == " x ")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write(labyrinth.Field[row, col]);
-                    }
-                    else if (labyrinth.Field[row, col] == " - ")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Gray;
-                        Console.Write(labyrinth.Field[row, col]);
-                    }
-                    else if (labyrinth.Field[row, col] == " * ")
-                    {
-                        Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write(labyrinth.Field[row, col]);
-                    }
-                }
-                Console.WriteLine();
-            }
-            Console.ForegroundColor = ConsoleColor.Gray;
-            Console.WriteLine();
-            Console.WriteLine();
+            labyrinth.DrawLabyrinth();
         }
 
         private string[,] SetPlayerOnField(string[,] labyrinth, Player player)
@@ -105,25 +67,8 @@ namespace CourseWork_Refactored
         private string ReadPlayerCommand()
         {
             Console.WriteLine("Enter your move (L=left, R=right, D=down, U=up): ");
-            string moveDirection = Console.ReadLine();
-            return moveDirection;
-
-            //TODO: Implement these commands
-            // case "top":
-            //
-            //     ShowScoreboard(scores);
-            //     Console.WriteLine("\n");
-            //     DisplayLabyrinth(labyrinth);
-            //
-            //     break;
-            // case "restart":
-            //     flag_temp = false;
-            //
-            //     break;
-            // case "exit":
-            //     Console.WriteLine("Good bye!");
-            //     Environment.Exit(0);
-            //     break;
+            string playerCommand = Console.ReadLine();
+            return playerCommand;
         }
 
         private bool CheckIfOut(Player player, string[,] labyrinth)
@@ -140,74 +85,85 @@ namespace CourseWork_Refactored
             return hasEscaped;
         }
 
-        private void MovePlayer(string moveDirection, string[,] labyrinth, Player player)
+        private void ReadCommand(string playerCommand, string[,] labyrinth, Player player)
         {
-            if (moveDirection == "d" || moveDirection == "D")
-            {
-                if (labyrinth[player.PossitionX + 1, player.PossitionY] == " - " ||
-                    labyrinth[player.PossitionX + 1, player.PossitionY] == " # ")
-                {
-                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                    labyrinth[player.PossitionX + 1, player.PossitionY] = " * ";
-                    player.PossitionX++;
-                    player.Moves++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid move! ");
-                }
-            }
+            playerCommand = playerCommand.ToLower();
 
-            else if (moveDirection == "u" || moveDirection == "U")
+            switch (playerCommand)
             {
-                if (labyrinth[player.PossitionX - 1, player.PossitionY] == " - " ||
-                    labyrinth[player.PossitionX - 1, player.PossitionY] == " # ")
-                {
-                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                    labyrinth[player.PossitionX - 1, player.PossitionY] = " * ";
-                    player.PossitionX--;
-                    player.Moves++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid move! ");
-                }
+                case "d": MovePlayerDown(labyrinth, player); break;
+                case "u": MovePlayerUp(labyrinth, player); break;
+                case "r": MovePlayerRight(labyrinth, player); break;
+                case "l": MovePlayerLeft(labyrinth, player); break;
+                case "top": //Show Scoreboard
+                case "exit": PrintCredits(player); break;
+                case "restart": //Restart 
+                    break;
+                default: break;
             }
+        }
 
-            else if (moveDirection == "r" || moveDirection == "R")
+        private static void MovePlayerLeft(string[,] labyrinth, Player player)
+        {
+            if (labyrinth[player.PossitionX, player.PossitionY - 1] == " - " ||
+    labyrinth[player.PossitionX, player.PossitionY - 1] == " # ")
             {
-                if (labyrinth[player.PossitionX, player.PossitionY + 1] == " - " ||
-                    labyrinth[player.PossitionX, player.PossitionY + 1] == " # ")
-                {
-                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                    labyrinth[player.PossitionX, player.PossitionY + 1] = " * ";
-                    player.PossitionY++;
-                    player.Moves++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid move! ");
-                }
-            }
-
-            else if (moveDirection == "l" || moveDirection == "L")
-            {
-                if (labyrinth[player.PossitionX, player.PossitionY - 1] == " - " ||
-                    labyrinth[player.PossitionX, player.PossitionY - 1] == " # ")
-                {
-                    labyrinth[player.PossitionX, player.PossitionY] = " - ";
-                    labyrinth[player.PossitionX, player.PossitionY - 1] = " * ";
-                    player.PossitionY--;
-                    player.Moves++;
-                }
-                else
-                {
-                    Console.WriteLine("Invalid move! ");
-                }
+                labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                labyrinth[player.PossitionX, player.PossitionY - 1] = " * ";
+                player.PossitionY--;
+                player.Moves++;
             }
             else
             {
-                Console.WriteLine("Invalid command!");
+                Console.WriteLine("Invalid move! ");
+            }
+        }
+
+        private static void MovePlayerRight(string[,] labyrinth, Player player)
+        {
+            if (labyrinth[player.PossitionX, player.PossitionY + 1] == " - " ||
+     labyrinth[player.PossitionX, player.PossitionY + 1] == " # ")
+            {
+                labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                labyrinth[player.PossitionX, player.PossitionY + 1] = " * ";
+                player.PossitionY++;
+                player.Moves++;
+            }
+            else
+            {
+                Console.WriteLine("Invalid move! ");
+            }
+        }
+
+        private static void MovePlayerUp(string[,] labyrinth, Player player)
+        {
+            if (labyrinth[player.PossitionX - 1, player.PossitionY] == " - " ||
+    labyrinth[player.PossitionX - 1, player.PossitionY] == " # ")
+            {
+                labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                labyrinth[player.PossitionX - 1, player.PossitionY] = " * ";
+                player.PossitionX--;
+                player.Moves++;
+            }
+            else
+            {
+                Console.WriteLine("Invalid move! ");
+            }
+        }
+
+        private static void MovePlayerDown(string[,] labyrinth, Player player)
+        {
+            if (labyrinth[player.PossitionX + 1, player.PossitionY] == " - " ||
+            labyrinth[player.PossitionX + 1, player.PossitionY] == " # ")
+            {
+                labyrinth[player.PossitionX, player.PossitionY] = " - ";
+                labyrinth[player.PossitionX + 1, player.PossitionY] = " * ";
+                player.PossitionX++;
+                player.Moves++;
+            }
+            else
+            {
+                Console.WriteLine("Invalid move! ");
             }
         }
     }
