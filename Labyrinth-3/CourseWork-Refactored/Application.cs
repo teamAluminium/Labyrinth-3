@@ -4,8 +4,8 @@
     {
         static void Main()
         {
-            var gameEngin = new GameEngine();
-            gameEngin.Run("Pesho", 10, 10);
+            var gameEngine = new GameEngine();
+            gameEngine.Run("Pesho", 10, 10);
         }
     }
 }

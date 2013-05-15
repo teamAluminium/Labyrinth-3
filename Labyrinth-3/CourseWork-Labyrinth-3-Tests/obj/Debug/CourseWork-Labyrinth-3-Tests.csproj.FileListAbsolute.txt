@@ -1,0 +1,7 @@
+F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Labyrinth-3-Tests\bin\Debug\CourseWork-Labyrinth-3-Tests.dll
+F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Labyrinth-3-Tests\bin\Debug\CourseWork-Labyrinth-3-Tests.pdb
+F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Labyrinth-3-Tests\bin\Debug\CourseWork-Refactored.exe
+F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Labyrinth-3-Tests\bin\Debug\CourseWork-Refactored.pdb
+F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Labyrinth-3-Tests\obj\Debug\CourseWork-Labyrinth-3-Tests.csprojResolveAssemblyReference.cache
+F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Labyrinth-3-Tests\obj\Debug\CourseWork-Labyrinth-3-Tests.dll
+F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Labyrinth-3-Tests\obj\Debug\CourseWork-Labyrinth-3-Tests.pdb
