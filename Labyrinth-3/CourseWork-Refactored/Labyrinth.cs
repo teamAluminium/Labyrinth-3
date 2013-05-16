@@ -11,6 +11,10 @@ namespace CourseWork_Refactored
 
         public Labyrinth(int rows, int cols)
         {
+            if (rows < 1 || cols < 1)
+            {
+                throw new ArgumentException("Dimentions must be positive");    
+            }
             ///Creating Frame used to avoid unneded exceptions during checks.
             this.Rows = rows + 2;
             this.Cols = cols + 2;

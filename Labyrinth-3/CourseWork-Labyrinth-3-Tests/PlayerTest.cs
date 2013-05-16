@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using CourseWork_Refactored;
 
@@ -95,7 +96,30 @@ namespace CourseWork_Labyrinth_3_Tests
             int actual = player.GetScore();
 
             Assert.AreEqual(expected, actual);
+        }
 
+        [TestMethod]
+        public void TryEscapeFromLabyrinthRight()
+        {
+            Labyrinth lab = new Labyrinth(5, 5);
+            Player player = new Player("Name", 4, 4);
+
+            using (var sw = new StringWriter())
+            {
+                using (var sr = new StringReader("Invalid move! "))
+                {
+                    Console.SetOut(sw);
+                    Console.SetIn(sr);
+
+                    // Act
+                    player.MoveRight();
+                    player.MoveRight();
+
+                    // Assert
+                    var result = sw.ToString();
+                    Assert.IsFalse(result.Equals("Invalid move! "));
+                }
+            }
         }
     }
 }
