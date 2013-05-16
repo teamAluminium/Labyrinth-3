@@ -8,8 +8,6 @@ namespace CourseWork_Labyrinth_3_Tests
     [TestClass]
     public class LabyrinthTest
     {
-
-
         [TestMethod]
         public void CreateLabyrinthTest()
         {

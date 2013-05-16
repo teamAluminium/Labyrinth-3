@@ -29,7 +29,7 @@ namespace CourseWork_Labyrinth_3_Tests
             ScoreBoard.AddPlayer(new Player("Name3", 7, 1));
             ScoreBoard.AddPlayer(new Player("Name4", 9, 3));
 
-            //Verify that only the top player are kept
+            //Verify that only the top players are kept
             //Error: No access to players list due to its protection level
 
             Assert.AreEqual(1, 0);
