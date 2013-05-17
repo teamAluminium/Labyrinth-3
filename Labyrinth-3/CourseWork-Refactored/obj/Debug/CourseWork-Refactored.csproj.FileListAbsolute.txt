@@ -16,3 +16,9 @@ F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWor
 F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.exe
 F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.pdb
 F:\Rumy\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.csprojResolveAssemblyReference.cache
+G:\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.exe.config
+G:\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.exe
+G:\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.pdb
+G:\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.exe
+G:\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\bin\Debug\CourseWork-Refactored.pdb
+G:\GitHub\Labyrinth-3\Labyrinth-3\CourseWork-Refactored\obj\Debug\CourseWork-Refactored.csprojResolveAssemblyReference.cache

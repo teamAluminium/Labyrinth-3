@@ -11,6 +11,10 @@ namespace CourseWork_Refactored
     public static class ScoreBoard
     {
         private static List<Player> players = new List<Player>();
+        public static List<Player> Players
+        {
+            get { return players; }
+        }
 
         /// <summary>
         /// Method used for adding current player to the scoreboard list.

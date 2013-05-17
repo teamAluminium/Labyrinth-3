@@ -16,8 +16,9 @@ namespace CourseWork_Labyrinth_3_Tests
             
             //Verify that the player is added 
             //Error: No access to players list due to its protection level
+            int playersCount = ScoreBoard.Players.Count;
 
-            Assert.AreEqual(1,0);
+            Assert.AreEqual(1, playersCount);
         }
 
         [TestMethod]
@@ -28,11 +29,13 @@ namespace CourseWork_Labyrinth_3_Tests
             ScoreBoard.AddPlayer(new Player("Name2", 5, 3));
             ScoreBoard.AddPlayer(new Player("Name3", 7, 1));
             ScoreBoard.AddPlayer(new Player("Name4", 9, 3));
+            ScoreBoard.AddPlayer(new Player("Name1", 4, 3));
 
             //Verify that only the top players are kept
             //Error: No access to players list due to its protection level
+            int playersCount = ScoreBoard.Players.Count;
 
-            Assert.AreEqual(1, 0);
+            Assert.AreEqual(5, playersCount);
         }
 
         [TestMethod]
